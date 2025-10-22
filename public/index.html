@@ -1,43 +1,53 @@
 <!DOCTYPE html>
+<!-- 告诉浏览器这是一个HTML5文档，必须放在文件最顶部 -->
 <html lang="en">
   <head>
+    <!-- head区域：放网页的“幕后信息”，不会直接显示在页面上 -->
     <meta charset="utf-8" />
+    <!-- 设置字符编码为utf-8，支持中文等全球文字 -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- 设置浏览器标签页左上角的小图标，%PUBLIC_URL%会被替换成public文件夹的真实路径 -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <meta name="theme-color" content="#000000" />
+    <!-- 设置浏览器地址栏的主题色（部分安卓浏览器有效） -->
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
+    <!-- 网页描述，搜索引擎会抓取这段文字 -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!-- iPhone主屏幕添加网页快捷方式时显示的图标 -->
     <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+      manifest.json提供“安装到桌面”功能，让网页像原生App一样被安装。
+      详见：https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+      上面标签里的%PUBLIC_URL%是Create React App的占位符，
+      打包时会被替换成public文件夹的绝对路径。
+      只有放在public里的文件才能被这样引用。
     -->
     <title>React App</title>
+    <!-- 浏览器标签页上显示的标题 -->
+    <script>
+      console.log('[HEAD] 当前时间:', new Date().toLocaleString('zh-CN'));
+    </script>
   </head>
   <body>
+    <!-- body区域：所有可见内容都放这里 -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- 如果用户浏览器禁用了JavaScript，就会显示这段文字 -->
     <div id="root"></div>
+    <!-- React会把整个应用渲染到这个id="root"的div里 -->
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      这个HTML文件只是“模板”。
+      直接双击打开会看到空白页。
+      开发时运行npm start，React会把打包后的js自动注入到这里。
     -->
+    <script>
+      console.log('[BODY] id="root"的div已生成', document.getElementById('root'));
+      console.log('[BODY] 整个HTML模板加载完成，等待React接管');
+    </script>
   </body>
 </html>
